@@ -83,4 +83,23 @@ public class Aufgaben {
             System.out.println(ninja.getId() + ".: " + ninja.getCharaktername() + ", " + ninja.getStufe() + ", " + ninja.getDatum() + ", " + ninja.getKraftpunkte());
         }
     }
+
+    public void aufgabe_b() {
+        List<Ninja> ninjas = parseJson("ninja_events.json");
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        double kraftpunkt = scanner.nextInt();
+        scanner.close();
+
+        for (Ninja ninja : ninjas) {
+            double craftpunct = ninja.getKraftpunkte();
+            if (kraftpunkt < craftpunct) {
+                System.out.println(ninja.getCharaktername());
+            }
+        }
+    }
+
+
+
 }
